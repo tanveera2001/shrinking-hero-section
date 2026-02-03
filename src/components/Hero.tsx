@@ -2,6 +2,8 @@
 
 import { useRef, useEffect } from "react";
 import { motion, useAnimation, useInView, TargetAndTransition } from "framer-motion";
+import ResumeButton from "./ResumeButton";
+import ViewProjectsButton from "./ViewProjectsButton";
 
 export default function Hero() {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
@@ -52,10 +54,10 @@ export default function Hero() {
         className="absolute flex items-center justify-center will-change-transform bg-cover bg-center"
         style={{
           background: `
-      radial-gradient(900px circle at 75% 35%, rgba(255,102,153,0.38), transparent 65%),
-      radial-gradient(700px circle at 25% 75%, rgba(255,150,180,0.28), transparent 65%),
-      linear-gradient(135deg, #ffe4ea, #ffd1dc)
-    `,
+            radial-gradient(900px circle at 75% 35%, rgba(255,102,153,0.38), transparent 65%),
+            radial-gradient(700px circle at 25% 75%, rgba(255,150,180,0.28), transparent 65%),
+            linear-gradient(135deg, #ffe4ea, #ffd1dc)
+          `,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
         }}
@@ -65,16 +67,16 @@ export default function Hero() {
           className="absolute inset-0 pointer-events-none"
           style={{
             background: `
-      radial-gradient(
-        circle at center,
-        rgba(255, 116, 137, 0.60) 0%,
-        rgba(255, 116, 137, 0.48) 28%,
-        rgba(255, 116, 137, 0.34) 48%,
-        rgba(255, 116, 137, 0.20) 65%,
-        rgba(255, 116, 137, 0.12) 78%,
-        transparent 88%
-      )
-    `,
+              radial-gradient(
+                circle at center,
+                rgba(255, 116, 137, 0.60) 0%,
+                rgba(255, 116, 137, 0.48) 28%,
+                rgba(255, 116, 137, 0.34) 48%,
+                rgba(255, 116, 137, 0.20) 65%,
+                rgba(255, 116, 137, 0.12) 78%,
+                transparent 88%
+              )
+            `,
           }}
         />
 
@@ -101,27 +103,15 @@ export default function Hero() {
             </span>{" "}
             roles.
           </h1>
+          
+          {/* BUTTONS */}
+          <div className="flex gap-2 sm:gap-4">
+            
+            {/* VIEW PROJECT BUTTON */}
+            <ViewProjectsButton />
 
-          <div className="flex gap-4">
-            {/* PRIMARY BUTTON */}
-            <motion.button
-              whileHover={{ scale: 1.07 }}
-              whileTap={{ scale: 0.94 }}
-              transition={{ type: "spring", stiffness: 280, damping: 18 }}
-              className="w-32 sm:w-40 md:w-44 px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 text-sm sm:text-base rounded-full bg-white text-[#C72626] font-medium relative overflow-hidden shadow-md hover:shadow-[0_0_20px_rgba(255,255,255,0.9)] cursor-pointer"
-            >
-              View Projects
-            </motion.button>
-
-            {/* OUTLINE BUTTON */}
-            <motion.button
-              whileHover={{ scale: 1.07 }}
-              whileTap={{ scale: 0.94 }}
-              transition={{ type: "spring", stiffness: 280, damping: 18 }}
-              className="w-32 sm:w-40 md:w-44 px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 text-sm sm:text-base rounded-full border border-white text-white font-medium relative overflow-hidden hover:border-white/80 hover:shadow-[0_0_22px_rgba(255,255,255,0.85)] cursor-pointer"
-            >
-              Resume
-            </motion.button>
+            {/* RESUME BUTTON */}
+            <ResumeButton />
           </div>
         </div>
       </motion.div>
