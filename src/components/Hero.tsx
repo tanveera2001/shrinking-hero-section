@@ -4,6 +4,7 @@ import { useRef, useEffect } from "react";
 import { motion, useAnimation, useInView, TargetAndTransition } from "framer-motion";
 import ResumeButton from "./ResumeButton";
 import ViewProjectsButton from "./ViewProjectsButton";
+import HeroSocialLinks from "./HeroSocialLinks";
 
 export default function Hero() {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
@@ -47,46 +48,46 @@ export default function Hero() {
 
   return (
     <section ref={wrapperRef} className="relative h-[80vh] sm:h-screen overflow-hidden">
+
+      {/* HERO CONATINER */}
       <motion.div
         variants={heroVariants}
         initial="initial"
         animate={controls}
         className="absolute flex items-center justify-center will-change-transform bg-cover bg-center"
         style={{
-          background: `
-            radial-gradient(900px circle at 75% 35%, rgba(255,102,153,0.38), transparent 65%),
-            radial-gradient(700px circle at 25% 75%, rgba(255,150,180,0.28), transparent 65%),
-            linear-gradient(135deg, #ffe4ea, #ffd1dc)
-          `,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-        }}
+  background: `
+    radial-gradient(900px circle at 75% 35%, rgba(59,130,246,0.35), transparent 65%),
+    radial-gradient(700px circle at 25% 75%, rgba(96,165,250,0.28), transparent 65%),
+    linear-gradient(135deg, #e0f2fe, #bfdbfe)
+  `,
+  backgroundRepeat: "no-repeat",
+  backgroundSize: "cover",
+}}
       >
-        {/* DARK CENTER OVERLAY */}
+        {/* HERO CONTAINER OVERLAY */}
         <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: `
-              radial-gradient(
-                circle at center,
-                rgba(255, 116, 137, 0.60) 0%,
-                rgba(255, 116, 137, 0.48) 28%,
-                rgba(255, 116, 137, 0.34) 48%,
-                rgba(255, 116, 137, 0.20) 65%,
-                rgba(255, 116, 137, 0.12) 78%,
-                transparent 88%
-              )
-            `,
-          }}
-        />
+  className="absolute inset-0 pointer-events-none"
+  style={{
+    background: `
+      radial-gradient(
+        circle at center,
+        rgba(59,130,246,0.60) 0%,
+        rgba(59,130,246,0.48) 28%,
+        rgba(59,130,246,0.34) 48%,
+        rgba(59,130,246,0.20) 65%,
+        rgba(59,130,246,0.12) 78%,
+        transparent 88%
+      )
+    `,
+  }}
+/>
 
-        {/* MAIN CONTENT (CENTERED) */}
+        {/* HERO TEXT CONTENT */}
         <div className="relative z-10 flex flex-col items-center justify-center h-full">
-          <p className="text-sm sm:text-base md:text-xl mb-4 opacity-90 font-bold text-white">
-            Hello, I’m Tanveer!
-          </p>
+          <p className="text-sm sm:text-base md:text-xl mb-4 opacity-90 font-mono font-bold text-white">Hello, I’m Tanveer!</p>
 
-          <h1 className="text-center text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-8 text-white">
+          <h1 className="text-center text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-8xl font-league font-medium leading-tight mb-8 text-white">
             Open for internships & <br />
             junior{" "}
             <span
@@ -101,19 +102,23 @@ export default function Hero() {
             >
               full-stack developer
             </span>{" "}
-            roles.
+            roles
           </h1>
-          
+
           {/* BUTTONS */}
           <div className="flex gap-2 sm:gap-4">
-            
+
             {/* VIEW PROJECT BUTTON */}
             <ViewProjectsButton />
 
             {/* RESUME BUTTON */}
             <ResumeButton />
           </div>
+
         </div>
+
+        {/* SOCIAL LINKS */}
+        <HeroSocialLinks />
       </motion.div>
     </section>
   );

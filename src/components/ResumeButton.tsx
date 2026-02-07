@@ -10,7 +10,7 @@ const ResumeButton = () => {
             transition={{ type: "spring", stiffness: 280, damping: 18 }}
             className="
                 w-30 sm:w-40 md:w-44 
-                px-4 sm:px-5 md:px-6 
+                px-2 sm:px-5 md:px-6 
                 py-2 sm:py-2.5 md:py-3 
                 text-sm sm:text-base 
                 rounded-full border 

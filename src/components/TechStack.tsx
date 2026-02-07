@@ -124,7 +124,7 @@ const TechStack = () => {
   );
   return (
     <section className="min-h-[50vh] px-4 py-4">
-      <h2 className="text-4xl font-serif mb-6 text-center">My skills</h2>
+      <h2 className="text-4xl font-bold mb-6 text-center font-league">My skills</h2>
       {/* CATEGORY FILTER */}
       <div className="flex flex-wrap justify-center gap-4 mb-12">
         {categories.map((category) => (
